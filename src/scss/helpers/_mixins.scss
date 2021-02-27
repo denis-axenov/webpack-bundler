@@ -1,0 +1,21 @@
+@mixin transition($property: all, $duration: .3s, $timing: ease-out) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+}
+
+@mixin respond-to($point) {
+  @if $point == 320 {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == 768 {
+    @media only screen and (max-width: 1365px) {
+      @content;
+    }
+  } @else if $point == 1366 {
+    @media only screen and (max-width: 1600px) {
+      @content;
+    }
+  }
+}
